@@ -1,5 +1,5 @@
 import os
-import cv2
+#import cv2
 from genai import GenAI
 
 def generate_grappling_plan(image_path, player_variable, isMMA=True, keywords=""):
@@ -71,10 +71,10 @@ def analyze_grappling_match(video_path, player_variable, isMMA=True, keywords=""
     
     # Generate a video subset if start_time and end_time are provided
     video_to_analyze = video_path
-    if start_time is not None and end_time is not None:
-        subset_path = f"{os.path.splitext(video_path)[0]}_subset{os.path.splitext(video_path)[1]}"
-        _extract_video_segment(video_path, subset_path, start_time, end_time)
-        video_to_analyze = subset_path
+    #if start_time is not None and end_time is not None:
+    #    subset_path = f"{os.path.splitext(video_path)[0]}_subset{os.path.splitext(video_path)[1]}"
+    #    _extract_video_segment(video_path, subset_path, start_time, end_time)
+    #    video_to_analyze = subset_path
     
     # Create the prompt for video analysis
     match_type = "MMA" if isMMA else "Jiu-jitsu"
@@ -212,7 +212,7 @@ def estimate_athlete_measurements(image_path, position_descriptor=""):
     return response
 
 
-def _extract_video_segment(input_path, output_path, start_time, end_time):
+##def _extract_video_segment(input_path, output_path, start_time, end_time):
     """
     Helper function to extract a segment from a video between specified start and end times.
     
